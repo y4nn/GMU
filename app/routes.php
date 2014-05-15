@@ -17,7 +17,21 @@ Route::get('/', function()
 });
 
 
+//Route::get('users', function()
+//{
+//    return 'Users!';
+//});
+
 Route::get('users', function()
 {
-    return 'Users!';
+    return View::make('users');
+});
+
+//Version avec artisant et database migration
+
+Route::get('users', function()
+{
+    $users = User::all();
+
+    return View::make('users')->with('users', $users);
 });
