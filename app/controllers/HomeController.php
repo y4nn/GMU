@@ -1,8 +1,10 @@
 <?php
 
 class HomeController extends BaseController {
+    
+    protected $layout = "layout.main";
 
-	/*
+    /*
 	|--------------------------------------------------------------------------
 	| Default Home Controller
 	|--------------------------------------------------------------------------
@@ -17,7 +19,16 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+            return View::make('hello');
 	}
+        
+        public function getUsers() {
+            
+            //$users = User::all();
+
+            $this->layout->content = View::make('users');
+        }
+        
+        
 
 }

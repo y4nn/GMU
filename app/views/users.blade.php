@@ -1,5 +1,3 @@
-@extends('layout')
 
-@section('content')
-    Users!
-@stop
+
+<h1>Users</h1>

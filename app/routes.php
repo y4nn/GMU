@@ -22,16 +22,11 @@ Route::get('/', function()
 //    return 'Users!';
 //});
 
-Route::get('users', function()
-{
-    return View::make('users');
-});
+//Route::get('users', function()
+//{
+//    return View::make('users');
+//});
 
 //Version avec artisant et database migration
 
-Route::get('users', function()
-{
-    $users = User::all();
-
-    return View::make('users')->with('users', $users);
-});
+Route::get('users', 'HomeController@getUsers');
