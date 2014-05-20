@@ -3,6 +3,13 @@
 class HomeController extends BaseController {
     
     protected $layout = "layout.main";
+    protected $user;
+    
+    public function homeController(){    
+    $user = new User();
+    }
+    
+    
 
     /*
 	|--------------------------------------------------------------------------
@@ -24,9 +31,10 @@ class HomeController extends BaseController {
         
         public function getUsers() {
             
-            //$users = User::all();
+            $user = User::all();
+            var_dump($user[0]->prenom);
 
-            $this->layout->content = View::make('users');
+            $this->layout->content = View::make('users')->with('user', $user);
         }
         
         
