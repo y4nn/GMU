@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function()
+
+Route::get('test', function()
 {
-	return View::make('hello');
+$auteur = User::find(1);
+var_dump($auteur);	
+    
+    return View::make('hello');
 });
 
 
