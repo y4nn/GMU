@@ -3,6 +3,7 @@
 class HomeController extends BaseController {
 
     protected $layout = "layout.main";
+    protected $user;
 
     public function homeController() {
         
@@ -27,10 +28,10 @@ class HomeController extends BaseController {
 
     public function getUsers() {
 
-        $user = User::all();
-        var_dump($user[0]->prenom);
+        $this->user = User::all();
+        var_dump($this->user[0]->prenom);
 
-        $this->layout->content = View::make('users')->with('user', $user);
+        $this->layout->content = View::make('users')->with('user', $this->user);
     }
 
 }
