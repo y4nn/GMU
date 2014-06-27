@@ -5,6 +5,10 @@ class HomeController extends BaseController {
     protected $layout = "layout.main";
     protected $user;
 
+    public function __construct() {
+        $this->user = new User();
+    }
+    
     public function homeController() {
         
     }
